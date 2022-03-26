@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+
+<script type="text/javascript">
+	function pulaLinha(){
+		document.write("<br>");
+	}
+
+	function mostra(texto){
+		document.write(texto);
+		pulaLinha();
+	}
+
+	function calculaImc(peso, altura){
+		return peso/(altura * altura);
+	}
+
+	var nome = prompt("Digite seu nome:")
+	var alturaInformada = prompt(nome + ", informe sua altura:");
+	var pesoInformado = prompt(nome + ", informe seu peso:");
+	var imc = calculaImc(pesoInformado, alturaInformada);
+
+	mostra("<h1>"+nome+", o seu IMC é: "+imc+"</h1>");
+
+	if(imc < 18.5 ) {
+		mostra("Pelo seu IMC, você está abaixo do peso ideal. (MAGREZA)");
+	}
+	if(imc >= 18.5 && imc < 24.9) {
+		mostra("Pelo seu IMC, você está no seu peso ideal. (NORMAL)");
+	}
+	if(imc >= 25 && imc < 29.9) {
+		mostra("Pelo seu IMC, você está acima do seu peso ideal. (SOBREPESO I)");
+	}
+	if(imc >= 30 && imc < 39.9) {
+		mostra("Pelo seu IMC, você está acima do seu peso ideal. (OBESIDADE II)");
+	}
+	if(imc >= 40) {
+		mostra("Pelo seu IMC, você está acima do seu peso ideal. (OBESIDADE GRAVE III)");
+	}
+
+</script>
